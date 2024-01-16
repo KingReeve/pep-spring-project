@@ -57,7 +57,7 @@ public class MessageService {
         Optional<Message> messageOptional = messageRepository.findById(Id);
         if(messageOptional.isPresent()){
             messageRepository.deleteById(Id);
-            return 1;
+            return 1; /* I should make custom sql in repository to return an int (which would give number of updated rows)*/
         }
         return null;
     }
